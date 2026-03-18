@@ -24,3 +24,28 @@ collections:
   en_style:
     output: true
     permalink: /en/style/:name.html
+
+  zh_shop:
+    output: true
+    permalink: /zh/shop/:name.html
+  en_shop:
+    output: true
+    permalink: /en/shop/:name.html
+  zh_outerwear:
+    output: true
+    permalink: /zh/outerwear/:name.html
+  en_outerwear:
+    output: true
+    permalink: /en/outerwear/:name.html
+  zh_basics:
+    output: true
+    permalink: /zh/basics/:name.html
+  en_basics:
+    output: true
+    permalink: /en/basics/:name.html
+  zh_accessories:
+    output: true
+    permalink: /zh/accessories/:name.html
+  en_accessories:
+    output: true
+    permalink: /en/accessories/:name.html
