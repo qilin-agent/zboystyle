@@ -19,7 +19,7 @@ description: "开衫、衬衫、卫衣、针织与 Polo 的青年男装导览。
     <p>按时间降序浏览本栏目全部文章。</p>
     <div class="archive-list">
       {% for post in posts_all %}
-      <a class="archive-item" href="{{ post.url }}">
+      <a class="archive-item" href="{{ post.url | relative_url }}">
         <span class="archive-item-title">{{ post.index_title | default: post.title }}</span>
         <span class="archive-item-meta"><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%Y-%m-%d" }}</time></span>
       </a>

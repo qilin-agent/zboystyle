@@ -19,7 +19,7 @@ description: "Softboy, campus-boy, cleanfit, and youth-oriented menswear style g
     <p>Browse the full section in reverse chronological order.</p>
     <div class="archive-list">
       {% for post in posts_all %}
-      <a class="archive-item" href="{{ post.url }}">
+      <a class="archive-item" href="{{ post.url | relative_url }}">
         <span class="archive-item-title">{{ post.index_title | default: post.title }}</span>
         <span class="archive-item-meta"><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%Y-%m-%d" }}</time></span>
       </a>

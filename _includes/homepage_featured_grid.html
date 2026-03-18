@@ -3,7 +3,7 @@
 {% assign chip_label = include.chip_label | default: 'Picked' %}
 <div class="feature-links">
   {% for post in posts %}
-  <a class="feature-link" href="{{ post.url }}">
+  <a class="feature-link" href="{{ post.url | relative_url }}">
     <figure class="feature-link-media"><img src="{{ post.thumbnail_image | default: post.card_image | default: fallback_image }}" alt="{{ post.thumbnail_alt | default: post.card_image_alt | default: post.index_title | default: post.title }}" /></figure>
     <div class="feature-link-body">
       <span class="feature-chip">{{ chip_label }}</span>
