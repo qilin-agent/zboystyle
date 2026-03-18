@@ -9,7 +9,8 @@ description: "A bilingual editorial menswear site for softboy, campus-boy, clean
 {% assign style_posts = site.en_style | sort: 'date' | reverse %}
 {% assign tops_posts = site.en_tops | sort: 'date' | reverse %}
 {% assign bottoms_posts = site.en_bottoms | sort: 'date' | reverse %}
-{% assign all_posts = style_posts | concat: tops_posts | concat: bottoms_posts | sort: 'date' | reverse %}
+{% assign accessories_posts = site.en_accessories | sort: 'date' | reverse %}
+{% assign all_posts = style_posts | concat: tops_posts | concat: bottoms_posts | concat: accessories_posts | sort: 'date' | reverse %}
 {% assign latest_posts = all_posts | slice: 0, 4 %}
 {% assign featured_posts = all_posts | where: 'featured', true | slice: 0, 6 %}
 <main class="wrap">
