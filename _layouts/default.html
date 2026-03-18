@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="{{ page.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}" />
+  <link rel="stylesheet" href="{{ page.asset_prefix | default: '../' }}assets/css/style.css" />
+</head>
+<body>
+  {% assign current_lang = page.lang | slice: 0, 2 %}
+  {% if current_lang == 'zh' %}
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="{{ page.asset_prefix | default: '../' }}zh/index.html">Zboystyle<small>青春男装、小众品牌与风格穿搭导览</small></a>
+      <nav><a href="{{ page.asset_prefix | default: '../' }}zh/shop/index.html">店铺</a><a href="{{ page.asset_prefix | default: '../' }}zh/tops/index.html">上衣</a><a href="{{ page.asset_prefix | default: '../' }}zh/bottoms/index.html">下装</a><a href="{{ page.asset_prefix | default: '../' }}zh/outerwear/index.html">外套</a><a href="{{ page.asset_prefix | default: '../' }}zh/basics/index.html">基础内搭</a><a href="{{ page.asset_prefix | default: '../' }}zh/accessories/index.html">配饰内衣</a><a href="{{ page.asset_prefix | default: '../' }}zh/style/index.html">风格穿搭</a></nav>
+    </div>
+  </header>
+  {% else %}
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="{{ page.asset_prefix | default: '../' }}en/index.html">Zboystyle<small>Youth style, niche menswear, and visual wardrobe guides</small></a>
+      <nav><a href="{{ page.asset_prefix | default: '../' }}en/shop/index.html">shop</a><a href="{{ page.asset_prefix | default: '../' }}en/tops/index.html">tops</a><a href="{{ page.asset_prefix | default: '../' }}en/bottoms/index.html">bottoms</a><a href="{{ page.asset_prefix | default: '../' }}en/outerwear/index.html">outerwear</a><a href="{{ page.asset_prefix | default: '../' }}en/basics/index.html">basics</a><a href="{{ page.asset_prefix | default: '../' }}en/accessories/index.html">accessories</a><a href="{{ page.asset_prefix | default: '../' }}en/style/index.html">style</a></nav>
+    </div>
+  </header>
+  {% endif %}
+  {{ content }}
+  {% if current_lang == 'zh' %}
+  <footer class="site-footer wrap"><div class="footer-grid"><a href="{{ page.asset_prefix | default: '../' }}zh/index.html">首页</a><a href="{{ page.asset_prefix | default: '../' }}zh/about.html">关于</a><a href="{{ page.asset_prefix | default: '../' }}zh/contact.html">联系</a><a href="{{ page.asset_prefix | default: '../' }}zh/privacy.html">隐私</a><a href="{{ page.asset_prefix | default: '../' }}zh/terms.html">条款</a></div></footer>
+  {% else %}
+  <footer class="site-footer wrap"><div class="footer-grid"><a href="{{ page.asset_prefix | default: '../' }}en/index.html">Home</a><a href="{{ page.asset_prefix | default: '../' }}en/about.html">About</a><a href="{{ page.asset_prefix | default: '../' }}en/contact.html">Contact</a><a href="{{ page.asset_prefix | default: '../' }}en/privacy.html">Privacy</a><a href="{{ page.asset_prefix | default: '../' }}en/terms.html">Terms</a></div></footer>
+  {% endif %}
+</body>
+</html>

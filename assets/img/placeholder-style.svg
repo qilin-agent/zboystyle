@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Zboystyle placeholder thumbnail</title>
+  <desc id="desc">Editorial placeholder image for style and wardrobe feature cards</desc>
+  <rect width="1200" height="800" fill="#efe4d8"/>
+  <rect x="60" y="60" width="1080" height="680" rx="28" fill="#fffdf9" stroke="#e5ddd2"/>
+  <text x="120" y="220" fill="#7a5a45" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="700">Zboystyle</text>
+  <text x="120" y="320" fill="#6f675f" font-family="Inter, Arial, sans-serif" font-size="36">Editorial feature thumbnail placeholder</text>
+  <text x="120" y="390" fill="#6f675f" font-family="Inter, Arial, sans-serif" font-size="28">Temporary collection-card image while section migration is in progress</text>
+</svg>

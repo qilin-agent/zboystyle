@@ -1,0 +1,23 @@
+title: Zboystyle
+markdown: kramdown
+permalink: none
+
+collections:
+  zh_tops:
+    output: true
+    permalink: /zh/tops/:name.html
+  en_tops:
+    output: true
+    permalink: /en/tops/:name.html
+  zh_bottoms:
+    output: true
+    permalink: /zh/bottoms/:name.html
+  en_bottoms:
+    output: true
+    permalink: /en/bottoms/:name.html
+  zh_style:
+    output: true
+    permalink: /zh/style/:name.html
+  en_style:
+    output: true
+    permalink: /en/style/:name.html
