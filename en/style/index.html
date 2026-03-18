@@ -1,11 +1,29 @@
 ---
+lang_switch_url: "../../zh/style/index.html"
 layout: page
 lang: en
 asset_prefix: "../../"
-lang_switch_url: "../../zh/style/index.html"
-title: 'Style | Zboystyle'
-description: 'Softboy, campus, cleanfit, sporty-youth, Korean/Japanese looks, and outfit formulas.'
+title: "Style | Zboystyle"
+description: "Softboy, campus-boy, cleanfit, and youth-oriented menswear style guides."
 ---
 {% assign posts_all = site.en_style | sort: 'date' | reverse %}
 {% assign posts_featured = posts_all | where: 'featured', true %}
-<main class="page wrap"><article class="page-card"><span class="eyebrow">Section</span><h1>Style</h1><p>From softboy and campus-boy dressing to cleanfit and Korean/Japanese youth styling, this section maps the style labels shaping online menswear discourse.</p><div class="feature-links">{% for post in posts_all limit:2 %}<a class="feature-link" href="{{ post.url }}"><figure class="feature-link-media"><img src="{{ post.thumbnail_image }}" alt="{{ post.thumbnail_alt }}" /></figure><div class="feature-link-body"><span class="tag">Latest</span><h3>{{ post.index_title | default: post.title }}</h3><p class="muted">{{ post.index_description | default: post.description }}</p></div></a>{% endfor %}{% for post in posts_featured limit:2 %}<a class="feature-link" href="{{ post.url }}"><figure class="feature-link-media"><img src="{{ post.thumbnail_image }}" alt="{{ post.thumbnail_alt }}" /></figure><div class="feature-link-body"><span class="tag">Featured</span><h3>{{ post.index_title | default: post.title }}</h3><p class="muted">{{ post.index_description | default: post.description }}</p></div></a>{% endfor %}</div><div class="article-list">{% for post in posts_all %}<div class="article-item article-item-row"><strong><a href="{{ post.url }}">{{ post.index_title | default: post.title }}</a></strong><span class="muted">{{ post.date | date: "%Y-%m-%d" }}</span></div>{% endfor %}</div></article></main>
+<main class="wrap"><section class="subhero"><p class="eyebrow">Section</p><h1>Style</h1><p class="lede">From softboy and campus-boy looks to cleanfit and adjacent mood-based dressing, this section maps the style language behind contemporary youth menswear.</p></section>
+<section class="section-index-blocks">
+  <section class="feature-card feature-panel">
+    <h2>Latest / featured</h2>
+    {% include section_highlights.html posts=posts_all featured_posts=posts_featured latest_label="Latest" featured_label="Featured" fallback_image="../../assets/img/placeholder-style.svg" %}
+  </section>
+  <section class="feature-card archive-panel">
+    <h2>All articles</h2>
+    <p>Browse the full section in reverse chronological order.</p>
+    <div class="archive-list">
+      {% for post in posts_all %}
+      <a class="archive-item" href="{{ post.url }}">
+        <span class="archive-item-title">{{ post.index_title | default: post.title }}</span>
+        <span class="archive-item-meta"><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%Y-%m-%d" }}</time></span>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+</section></main>

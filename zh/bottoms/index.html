@@ -1,11 +1,29 @@
 ---
+lang_switch_url: "../../en/bottoms/index.html"
 layout: page
 lang: zh-CN
 asset_prefix: "../../"
-lang_switch_url: "../../en/bottoms/index.html"
-title: '下装 | Zboystyle'
-description: '西裤、牛仔裤、短裤、卫裤与各种影响整体轮廓的下装选择。'
+title: "下装 | Zboystyle"
+description: "直筒西裤、牛仔裤与各类裤装的青年男装导览。"
 ---
 {% assign posts_all = site.zh_bottoms | sort: 'date' | reverse %}
 {% assign posts_featured = posts_all | where: 'featured', true %}
-<main class="page wrap"><article class="page-card"><span class="eyebrow">栏目</span><h1>下装</h1><p>从直筒西裤、牛仔裤到运动裤与短裤，这里整理最能决定轮廓、比例与完成度的下半身单品。</p><div class="feature-links">{% for post in posts_all limit:2 %}<a class="feature-link" href="{{ post.url }}"><figure class="feature-link-media"><img src="{{ post.thumbnail_image }}" alt="{{ post.thumbnail_alt }}" /></figure><div class="feature-link-body"><span class="tag">最新文章</span><h3>{{ post.index_title | default: post.title }}</h3><p class="muted">{{ post.index_description | default: post.description }}</p></div></a>{% endfor %}{% for post in posts_featured limit:2 %}<a class="feature-link" href="{{ post.url }}"><figure class="feature-link-media"><img src="{{ post.thumbnail_image }}" alt="{{ post.thumbnail_alt }}" /></figure><div class="feature-link-body"><span class="tag">热点 / 置顶</span><h3>{{ post.index_title | default: post.title }}</h3><p class="muted">{{ post.index_description | default: post.description }}</p></div></a>{% endfor %}</div><div class="article-list">{% for post in posts_all %}<div class="article-item article-item-row"><strong><a href="{{ post.url }}">{{ post.index_title | default: post.title }}</a></strong><span class="muted">{{ post.date | date: "%Y-%m-%d" }}</span></div>{% endfor %}</div></article></main>
+<main class="wrap"><section class="subhero"><p class="eyebrow">栏目</p><h1>下装</h1><p class="lede">这里聚焦直筒西裤、牛仔裤、运动裤与其他决定比例和轮廓的下装选择。</p></section>
+<section class="section-index-blocks">
+  <section class="feature-card feature-panel">
+    <h2>最新 / 精选</h2>
+    {% include section_highlights.html posts=posts_all featured_posts=posts_featured latest_label="最新文章" featured_label="热点 / 置顶" fallback_image="../../assets/img/placeholder-style.svg" %}
+  </section>
+  <section class="feature-card archive-panel">
+    <h2>全部文章</h2>
+    <p>按时间降序浏览本栏目全部文章。</p>
+    <div class="archive-list">
+      {% for post in posts_all %}
+      <a class="archive-item" href="{{ post.url }}">
+        <span class="archive-item-title">{{ post.index_title | default: post.title }}</span>
+        <span class="archive-item-meta"><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%Y-%m-%d" }}</time></span>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+</section></main>
