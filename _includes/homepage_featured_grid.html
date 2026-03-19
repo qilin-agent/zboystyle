@@ -3,12 +3,14 @@
 {% assign chip_label = include.chip_label | default: 'Picked' %}
 <div class="feature-links">
   {% for post in posts %}
+  {% assign raw_image = post.thumbnail_image | default: post.card_image | default: fallback_image %}
+  {% assign card_image = raw_image | replace: '../../', '/' | replace: '../', '/' %}
   <a class="feature-link" href="{{ post.url | relative_url }}">
     <div class="feature-link-body">
       <span class="feature-chip">{{ chip_label }}</span>
       <h3>{{ post.index_title | default: post.title }}</h3>
     </div>
-    <figure class="feature-link-media"><img src="{{ post.thumbnail_image | default: post.card_image | default: fallback_image }}" alt="{{ post.thumbnail_alt | default: post.card_image_alt | default: post.index_title | default: post.title }}" /></figure>
+    <figure class="feature-link-media"><img src="{{ card_image | relative_url }}" alt="{{ post.thumbnail_alt | default: post.card_image_alt | default: post.index_title | default: post.title }}" /></figure>
     <p class="feature-link-desc">{{ post.index_description | default: post.description }}</p>
   </a>
   {% endfor %}
