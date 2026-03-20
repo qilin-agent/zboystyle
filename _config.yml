@@ -49,3 +49,9 @@ collections:
   en_accessories:
     output: true
     permalink: /en/accessories/:name.html
+  zh_section_index:
+    output: true
+    permalink: /zh/:name/index.html
+  en_section_index:
+    output: true
+    permalink: /en/:name/index.html

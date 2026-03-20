@@ -1,0 +1,27 @@
+---
+layout: null
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% assign page_candidates = site.pages | where_exp: 'p', 'p.sitemap != false' %}
+{% for p in page_candidates %}
+  {% unless p.url contains '/assets/' or p.url contains '/docs/' or p.name == '404.html' or p.url == '/robots.txt' or p.url == '/sitemap.xml' %}
+  <url>
+    <loc>{{ site.url }}{{ site.baseurl }}{{ p.url | xml_escape }}</loc>
+    {% if p.updated %}<lastmod>{{ p.updated | date: "%Y-%m-%d" }}</lastmod>{% elsif p.date %}<lastmod>{{ p.date | date: "%Y-%m-%d" }}</lastmod>{% endif %}
+  </url>
+  {% endunless %}
+{% endfor %}
+
+{% assign all_collections = '' | split: '' %}
+{% assign all_collections = all_collections | concat: site.zh_tops | concat: site.en_tops | concat: site.zh_bottoms | concat: site.en_bottoms | concat: site.zh_style | concat: site.en_style | concat: site.zh_shop | concat: site.en_shop | concat: site.zh_outerwear | concat: site.en_outerwear | concat: site.zh_basics | concat: site.en_basics | concat: site.zh_accessories | concat: site.en_accessories | concat: site.zh_section_index | concat: site.en_section_index %}
+{% for doc in all_collections %}
+  {% unless doc.sitemap == false %}
+  <url>
+    <loc>{{ site.url }}{{ site.baseurl }}{{ doc.url | xml_escape }}</loc>
+    {% if doc.updated %}<lastmod>{{ doc.updated | date: "%Y-%m-%d" }}</lastmod>{% elsif doc.date %}<lastmod>{{ doc.date | date: "%Y-%m-%d" }}</lastmod>{% endif %}
+  </url>
+  {% endunless %}
+{% endfor %}
+</urlset>
