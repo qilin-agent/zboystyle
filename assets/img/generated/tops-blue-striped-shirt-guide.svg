@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="1100" viewBox="0 0 1600 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1100" fill="#F3F6FA"/>
+  <rect x="110" y="120" width="1380" height="860" rx="42" fill="#FFFFFF" stroke="#D7E2F1" stroke-width="8"/>
+  <rect x="220" y="200" width="360" height="700" rx="28" fill="#E9F1FB"/>
+  <rect x="270" y="220" width="260" height="640" rx="20" fill="#EEF5FD" stroke="#C6D6EA" stroke-width="6"/>
+  <path d="M330 250H470L435 330V820H365V330L330 250Z" fill="#F8FBFF" stroke="#9CB7D3" stroke-width="6"/>
+  <path d="M365 250C370 210 392 185 400 175C408 185 430 210 435 250" stroke="#9CB7D3" stroke-width="6" fill="none"/>
+  <path d="M400 285V815" stroke="#9CB7D3" stroke-width="5" stroke-dasharray="10 10"/>
+  <g opacity="0.95">
+    <rect x="343" y="300" width="114" height="34" fill="#B4CAE2"/>
+    <rect x="343" y="362" width="114" height="34" fill="#B4CAE2"/>
+    <rect x="343" y="424" width="114" height="34" fill="#B4CAE2"/>
+    <rect x="343" y="486" width="114" height="34" fill="#B4CAE2"/>
+    <rect x="343" y="548" width="114" height="34" fill="#B4CAE2"/>
+    <rect x="343" y="610" width="114" height="34" fill="#B4CAE2"/>
+    <rect x="343" y="672" width="114" height="34" fill="#B4CAE2"/>
+  </g>
+  <text x="650" y="315" fill="#17324D" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700">蓝白条纹衬衫，为什么又回到春季男装主场</text>
+  <text x="650" y="390" fill="#4E6782" font-family="Arial, Helvetica, sans-serif" font-size="30">cleanfit / 男大 / 轻韩系的低风险上装入口</text>
+  <rect x="650" y="460" width="660" height="130" rx="20" fill="#F4F8FD"/>
+  <text x="690" y="525" fill="#35526F" font-family="Arial, Helvetica, sans-serif" font-size="28">中文平台高频信号：</text>
+  <text x="690" y="567" fill="#5D7793" font-family="Arial, Helvetica, sans-serif" font-size="24">条纹衬衫 / cleanfit / 男大学生 / 春季通勤 / 蓝白配色</text>
+  <rect x="650" y="630" width="240" height="88" rx="44" fill="#DCEAF8"/>
+  <text x="705" y="685" fill="#25415D" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">tops</text>
+  <rect x="920" y="630" width="390" height="88" rx="44" fill="#EDF4FB" stroke="#D5E3F0" stroke-width="4"/>
+  <text x="965" y="685" fill="#4B6682" font-family="Arial, Helvetica, sans-serif" font-size="28">striped shirt guide</text>
+  <text x="650" y="805" fill="#6A829A" font-family="Arial, Helvetica, sans-serif" font-size="26">Zboystyle</text>
+</svg>
