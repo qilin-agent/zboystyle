@@ -17,41 +17,26 @@ description: "A bilingual editorial menswear site for softboy, campus-boy, clean
 {% assign latest_posts = all_posts | slice: 0, 4 %}
 {% assign featured_posts = all_posts | where: 'featured', true | slice: 0, 6 %}
 <main class="wrap">
-  <section class="hero story-hero">
-    <div class="hero-copy">
+  <section class="hero story-hero story-hero-wide">
+    <div class="hero-copy hero-copy-wide">
       <p class="eyebrow">English Edition</p>
-      <h1>A style map for youth menswear you can actually browse, wear, and shop</h1>
-      <p class="lede">Zboystyle follows softboy, campus-boy, cleanfit, niche menswear brands, and product-led outfit logic through bilingual editorial guides shaped by Chinese internet style culture.</p>
-      <div class="toc">
-        <span class="pill">Softboy</span>
-        <span class="pill">Campus boy</span>
-        <span class="pill">Cleanfit</span>
-        <span class="pill">Products</span>
-        <span class="pill">Shops</span>
+      <div class="story-hero-layout">
+        <div class="story-hero-text">
+          <h1>A style map for youth menswear you can actually browse, wear, and shop</h1>
+          <p class="lede">Zboystyle follows softboy, campus-boy, cleanfit, niche menswear brands, and product-led outfit logic through bilingual editorial guides shaped by Chinese internet style culture.</p>
+          <div class="toc">
+            <span class="pill">Softboy</span>
+            <span class="pill">Campus boy</span>
+            <span class="pill">Cleanfit</span>
+            <span class="pill">Products</span>
+            <span class="pill">Shops</span>
+          </div>
+        </div>
+        <figure class="hero-visual hero-visual-wide">
+          <img src="../assets/img/photos/basics-heavyweight-white-tee-hero.jpg" alt="Zboystyle homepage hero visual showing a cleaner young menswear on-body look closer to campus-boy and cleanfit styling" />
+        </figure>
       </div>
-      <figure class="hero-visual">
-        <img src="../assets/img/photos/basics-heavyweight-white-tee-hero.jpg" alt="Zboystyle homepage hero visual showing a cleaner young menswear on-body look closer to campus-boy and cleanfit styling" />
-      </figure>
     </div>
-    <aside class="hero-panel">
-      <div class="hero-panel-block">
-        <span class="tag">Now live</span>
-        <div class="hero-stat">7</div>
-        <p>homepage sections covering style, tops, bottoms, shops, basics, outerwear, and accessories.</p>
-      </div>
-      <div class="hero-panel-block">
-        <span class="tag">Start here</span>
-        <ul class="hero-links">
-          <li><a href="../en/style/college-boy-style.html">Why the campus-boy look keeps returning</a></li>
-          <li><a href="../en/tops/cardigan-guide.html">Why cardigans stay reliable</a></li>
-          <li><a href="../en/shop/taobao-softboy-shops.html">How to browse Taobao shop leads</a></li>
-        </ul>
-      </div>
-      <div class="hero-panel-block hero-panel-note">
-        <strong>What this site does</strong>
-        <p>It connects style interpretation, item logic, product routes, and store discovery instead of stopping at vague fashion language.</p>
-      </div>
-    </aside>
   </section>
 
   <section class="feature-card archive-panel">
