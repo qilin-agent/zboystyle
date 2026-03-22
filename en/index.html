@@ -108,13 +108,30 @@ description: "A bilingual editorial menswear site for softboy, campus-boy, clean
   const shows = document.querySelectorAll('[data-slideshow="hero"]');
   shows.forEach((show)=>{
     const slides=[...show.querySelectorAll('.hero-slide')];
+    const dotsWrap=show.querySelector('.hero-slide-dots');
+    const prev=show.querySelector('.hero-slide-prev');
+    const next=show.querySelector('.hero-slide-next');
     if(slides.length<2) return;
-    let i=0;
-    setInterval(()=>{
-      slides[i].classList.remove('is-active');
-      i=(i+1)%slides.length;
-      slides[i].classList.add('is-active');
-    }, 3200);
+    let i=0, timer;
+    const dots=slides.map((_,idx)=>{
+      const b=document.createElement('button');
+      b.type='button';
+      b.className='hero-dot'+(idx===0?' is-active':'');
+      b.setAttribute('aria-label','Go to slide '+(idx+1));
+      b.addEventListener('click',()=>go(idx,true));
+      dotsWrap.appendChild(b);
+      return b;
+    });
+    function paint(){
+      slides.forEach((s,idx)=>s.classList.toggle('is-active',idx===i));
+      dots.forEach((d,idx)=>d.classList.toggle('is-active',idx===i));
+    }
+    function go(idx,reset){ i=idx; paint(); if(reset) restart(); }
+    function step(dir){ i=(i+dir+slides.length)%slides.length; paint(); restart(); }
+    function restart(){ clearInterval(timer); timer=setInterval(()=>step(1),4200); }
+    prev.addEventListener('click',()=>step(-1));
+    next.addEventListener('click',()=>step(1));
+    paint(); restart();
   });
 })();
 </script>
