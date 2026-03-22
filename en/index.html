@@ -32,9 +32,14 @@ description: "A bilingual editorial menswear site for softboy, campus-boy, clean
             <span class="pill">Shops</span>
           </div>
         </div>
-        <figure class="hero-visual hero-visual-wide">
-          <img src="../assets/img/photos/basics-heavyweight-white-tee-hero.jpg" alt="Zboystyle homepage hero visual showing a cleaner young menswear on-body look closer to campus-boy and cleanfit styling" />
-        </figure>
+        <figure class="hero-visual hero-visual-wide hero-slideshow" data-slideshow="hero">
+            <img class="hero-slide is-active" src="../assets/img/task-generated/zboystyle/college-boy-style-hero-01.jpg" alt="College-boy youth menswear hero" loading="eager" />
+            <img class="hero-slide" src="../assets/img/task-generated/zboystyle/hoodie-campus-hero-01.jpg" alt="Campus hoodie youth menswear hero" loading="eager" />
+            <img class="hero-slide" src="../assets/img/task-generated/zboystyle/jeans-campus-hero-01.jpg" alt="Jeans youth menswear hero" loading="eager" />
+            <img class="hero-slide" src="../assets/img/task-generated/zboystyle/mens-shirts-white-campus-hero-01.jpg" alt="White shirt campus style hero" loading="eager" />
+            <img class="hero-slide" src="../assets/img/task-generated/zboystyle/skiwear-mountain-hero-01.jpg" alt="Skiwear mountain youth style hero" loading="eager" />
+            <figcaption class="hero-slideshow-note">Zboystyle homepage hero slideshow showing campus-boy, cleanfit, and youth menswear editorial imagery</figcaption>
+          </figure>
       </div>
     </div>
   </section>
@@ -98,3 +103,19 @@ description: "A bilingual editorial menswear site for softboy, campus-boy, clean
     </div>
   </section>
 </main>
+<script class="hero-slideshow-script">
+(function(){
+  const shows = document.querySelectorAll('[data-slideshow="hero"]');
+  shows.forEach((show)=>{
+    const slides=[...show.querySelectorAll('.hero-slide')];
+    if(slides.length<2) return;
+    let i=0;
+    setInterval(()=>{
+      slides[i].classList.remove('is-active');
+      i=(i+1)%slides.length;
+      slides[i].classList.add('is-active');
+    }, 3200);
+  });
+})();
+</script>
+
