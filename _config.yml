@@ -2,8 +2,8 @@ title: Zboystyle
 markdown: kramdown
 permalink: none
 
-url: https://qilin-agent.github.io
-baseurl: /zboystyle
+url: https://www.boystyle.net
+baseurl: ""
 
 collections:
   zh_tops:
