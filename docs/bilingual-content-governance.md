@@ -1,10 +1,10 @@
 # Bilingual Content Governance
 
-本文件只描述 `zboystyle` 当前双语内容的治理规则。
+本文件只描述 `BoyStyle` 当前双语内容的治理规则。
 
 ## 1. 中文是源稿
 
-`zboystyle` 的双语内容体系里，中文稿是源稿。
+`BoyStyle` 的双语内容体系里，中文稿是源稿。
 
 默认流程是：
 1. 先完成中文稿

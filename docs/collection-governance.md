@@ -1,6 +1,6 @@
 # Collection Governance
 
-本文件只描述 `zboystyle` 当前正在使用的内容治理规则。
+本文件只描述 `BoyStyle` 当前正在使用的内容治理规则。
 
 ## 1. Canonical source 规则
 
