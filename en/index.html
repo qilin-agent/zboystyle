@@ -108,10 +108,36 @@ description: "A bilingual editorial menswear site for softboy, campus-boy, clean
   const shows = document.querySelectorAll('[data-slideshow="hero"]');
   shows.forEach((show)=>{
     const slides=[...show.querySelectorAll('.hero-slide')];
-    const dotsWrap=show.querySelector('.hero-slide-dots');
-    const prev=show.querySelector('.hero-slide-prev');
-    const next=show.querySelector('.hero-slide-next');
     if(slides.length<2) return;
+
+    let dotsWrap=show.querySelector('.hero-slide-dots');
+    if(!dotsWrap){
+      dotsWrap=document.createElement('div');
+      dotsWrap.className='hero-slide-dots';
+      dotsWrap.setAttribute('role','tablist');
+      show.appendChild(dotsWrap);
+    }
+
+    let prev=show.querySelector('.hero-slide-prev');
+    if(!prev){
+      prev=document.createElement('button');
+      prev.type='button';
+      prev.className='hero-slide-nav hero-slide-prev';
+      prev.setAttribute('aria-label','Previous slide');
+      prev.textContent='‹';
+      show.appendChild(prev);
+    }
+
+    let next=show.querySelector('.hero-slide-next');
+    if(!next){
+      next=document.createElement('button');
+      next.type='button';
+      next.className='hero-slide-nav hero-slide-next';
+      next.setAttribute('aria-label','Next slide');
+      next.textContent='›';
+      show.appendChild(next);
+    }
+
     let i=0, timer;
     const dots=slides.map((_,idx)=>{
       const b=document.createElement('button');
@@ -127,10 +153,12 @@ description: "A bilingual editorial menswear site for softboy, campus-boy, clean
       dots.forEach((d,idx)=>d.classList.toggle('is-active',idx===i));
     }
     function go(idx,reset){ i=idx; paint(); if(reset) restart(); }
-    function step(dir){ i=(i+dir+slides.length)%slides.length; paint(); restart(); }
+    function step(dir){ i=(i+dir+slides.length)%slides.length; paint(); if(timer) restart(); }
     function restart(){ clearInterval(timer); timer=setInterval(()=>step(1),4200); }
     prev.addEventListener('click',()=>step(-1));
     next.addEventListener('click',()=>step(1));
+    show.addEventListener('mouseenter',()=>clearInterval(timer));
+    show.addEventListener('mouseleave',restart);
     paint(); restart();
   });
 })();
